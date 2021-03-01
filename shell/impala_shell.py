@@ -993,7 +993,7 @@ class ImpalaShell(object, cmd.Cmd):
 
         data = ""
         if self.print_progress and progress.total_scan_ranges > 0:
-          val = ((summary.progress.num_completed_scan_ranges * 100) /
+          val = int((summary.progress.num_completed_scan_ranges * 100) /
                  summary.progress.total_scan_ranges)
           fragment_text = "[%s%s] %s%%\n" % ("#" * val, " " * (100 - val), val)
           data += fragment_text
